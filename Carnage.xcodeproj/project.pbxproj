@@ -3,27 +3,56 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		84CE7AD22C2F37BF00B8AED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */; };
 		84CE7AD42C2F37BF00B8AED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */; };
-		84CE7AD62C2F37BF00B8AED3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD52C2F37BF00B8AED3 /* ViewController.swift */; };
 		84CE7AD92C2F37BF00B8AED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7AD72C2F37BF00B8AED3 /* Main.storyboard */; };
 		84CE7ADB2C2F37C100B8AED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7ADA2C2F37C100B8AED3 /* Assets.xcassets */; };
 		84CE7ADE2C2F37C100B8AED3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7ADC2C2F37C100B8AED3 /* LaunchScreen.storyboard */; };
+		84CE7AE62C2F381900B8AED3 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AE52C2F381900B8AED3 /* FirstScreenView.swift */; };
+		84CE7AEA2C2F3BB300B8AED3 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AE92C2F3BB300B8AED3 /* FirstScreenViewModel.swift */; };
+		84CE7AED2C2F414E00B8AED3 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AEC2C2F414E00B8AED3 /* EventCell.swift */; };
+		84CE7AF02C2F469F00B8AED3 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AEF2C2F469F00B8AED3 /* Client.swift */; };
+		84CE7AF32C2F497300B8AED3 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 84CE7AF22C2F497300B8AED3 /* OpenAPIClient */; };
+		84CE7AF62C2F4D5B00B8AED3 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 84CE7AF52C2F4D5B00B8AED3 /* OpenAPIClient */; };
+		84CE7AF92C2F501600B8AED3 /* Web3 in Frameworks */ = {isa = PBXBuildFile; productRef = 84CE7AF82C2F501600B8AED3 /* Web3 */; };
+		84CE7AFB2C2F501600B8AED3 /* Web3ContractABI in Frameworks */ = {isa = PBXBuildFile; productRef = 84CE7AFA2C2F501600B8AED3 /* Web3ContractABI */; };
+		84CE7AFD2C2F501600B8AED3 /* Web3PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = 84CE7AFC2C2F501600B8AED3 /* Web3PromiseKit */; };
+		84CE7AFF2C2F51AF00B8AED3 /* FirstScreenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AFE2C2F51AF00B8AED3 /* FirstScreenModel.swift */; };
+		84CE7B012C2F51BD00B8AED3 /* FirstScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B002C2F51BD00B8AED3 /* FirstScreenConfigurator.swift */; };
+		84CE7B042C2F62DF00B8AED3 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B032C2F62DF00B8AED3 /* GameViewController.swift */; };
+		84CE7B062C2F642F00B8AED3 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B052C2F642F00B8AED3 /* GameScene.swift */; };
+		84CE7B092C300D6800B8AED3 /* SecondScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B082C300D6800B8AED3 /* SecondScreenView.swift */; };
+		84CE7B0B2C300D7C00B8AED3 /* SecondScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B0A2C300D7C00B8AED3 /* SecondScreenViewModel.swift */; };
+		84CE7B0F2C300E2F00B8AED3 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B0E2C300E2F00B8AED3 /* NavigationManager.swift */; };
+		84CE7B112C300F6800B8AED3 /* SecondScreenConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7B102C300F6800B8AED3 /* SecondScreenConfigurator.swift */; };
+		84CE7B132C30236D00B8AED3 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7B122C30236D00B8AED3 /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		84CE7ACE2C2F37BF00B8AED3 /* Carnage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		84CE7AD52C2F37BF00B8AED3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		84CE7AD82C2F37BF00B8AED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		84CE7ADA2C2F37C100B8AED3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CE7ADD2C2F37C100B8AED3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84CE7ADF2C2F37C100B8AED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84CE7AE52C2F381900B8AED3 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
+		84CE7AE92C2F3BB300B8AED3 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
+		84CE7AEC2C2F414E00B8AED3 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		84CE7AEF2C2F469F00B8AED3 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
+		84CE7AFE2C2F51AF00B8AED3 /* FirstScreenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenModel.swift; sourceTree = "<group>"; };
+		84CE7B002C2F51BD00B8AED3 /* FirstScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenConfigurator.swift; sourceTree = "<group>"; };
+		84CE7B032C2F62DF00B8AED3 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		84CE7B052C2F642F00B8AED3 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		84CE7B082C300D6800B8AED3 /* SecondScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenView.swift; sourceTree = "<group>"; };
+		84CE7B0A2C300D7C00B8AED3 /* SecondScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenViewModel.swift; sourceTree = "<group>"; };
+		84CE7B0E2C300E2F00B8AED3 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		84CE7B102C300F6800B8AED3 /* SecondScreenConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenConfigurator.swift; sourceTree = "<group>"; };
+		84CE7B122C30236D00B8AED3 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +60,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84CE7AF92C2F501600B8AED3 /* Web3 in Frameworks */,
+				84CE7AF62C2F4D5B00B8AED3 /* OpenAPIClient in Frameworks */,
+				84CE7AFB2C2F501600B8AED3 /* Web3ContractABI in Frameworks */,
+				84CE7AFD2C2F501600B8AED3 /* Web3PromiseKit in Frameworks */,
+				84CE7AF32C2F497300B8AED3 /* OpenAPIClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +90,83 @@
 		84CE7AD02C2F37BF00B8AED3 /* Carnage */ = {
 			isa = PBXGroup;
 			children = (
+				84CE7B0D2C300E1D00B8AED3 /* Managers */,
+				84CE7AEE2C2F469000B8AED3 /* Client */,
+				84CE7AE72C2F397700B8AED3 /* Views */,
 				84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */,
 				84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */,
-				84CE7AD52C2F37BF00B8AED3 /* ViewController.swift */,
 				84CE7AD72C2F37BF00B8AED3 /* Main.storyboard */,
 				84CE7ADA2C2F37C100B8AED3 /* Assets.xcassets */,
 				84CE7ADC2C2F37C100B8AED3 /* LaunchScreen.storyboard */,
 				84CE7ADF2C2F37C100B8AED3 /* Info.plist */,
 			);
 			path = Carnage;
+			sourceTree = "<group>";
+		};
+		84CE7AE72C2F397700B8AED3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7B072C300D1500B8AED3 /* SecondScreen */,
+				84CE7B022C2F62C200B8AED3 /* GameScreen */,
+				84CE7AE82C2F3B9C00B8AED3 /* FirstScreen */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		84CE7AE82C2F3B9C00B8AED3 /* FirstScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7AEB2C2F413E00B8AED3 /* Subviews */,
+				84CE7B002C2F51BD00B8AED3 /* FirstScreenConfigurator.swift */,
+				84CE7AFE2C2F51AF00B8AED3 /* FirstScreenModel.swift */,
+				84CE7AE92C2F3BB300B8AED3 /* FirstScreenViewModel.swift */,
+				84CE7AE52C2F381900B8AED3 /* FirstScreenView.swift */,
+			);
+			path = FirstScreen;
+			sourceTree = "<group>";
+		};
+		84CE7AEB2C2F413E00B8AED3 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7AEC2C2F414E00B8AED3 /* EventCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		84CE7AEE2C2F469000B8AED3 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7AEF2C2F469F00B8AED3 /* Client.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		84CE7B022C2F62C200B8AED3 /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7B032C2F62DF00B8AED3 /* GameViewController.swift */,
+				84CE7B052C2F642F00B8AED3 /* GameScene.swift */,
+				84CE7B122C30236D00B8AED3 /* GameScene.sks */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
+		84CE7B072C300D1500B8AED3 /* SecondScreen */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7B102C300F6800B8AED3 /* SecondScreenConfigurator.swift */,
+				84CE7B0A2C300D7C00B8AED3 /* SecondScreenViewModel.swift */,
+				84CE7B082C300D6800B8AED3 /* SecondScreenView.swift */,
+			);
+			path = SecondScreen;
+			sourceTree = "<group>";
+		};
+		84CE7B0D2C300E1D00B8AED3 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				84CE7B0E2C300E2F00B8AED3 /* NavigationManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +185,13 @@
 			dependencies = (
 			);
 			name = Carnage;
+			packageProductDependencies = (
+				84CE7AF22C2F497300B8AED3 /* OpenAPIClient */,
+				84CE7AF52C2F4D5B00B8AED3 /* OpenAPIClient */,
+				84CE7AF82C2F501600B8AED3 /* Web3 */,
+				84CE7AFA2C2F501600B8AED3 /* Web3ContractABI */,
+				84CE7AFC2C2F501600B8AED3 /* Web3PromiseKit */,
+			);
 			productName = Carnage;
 			productReference = 84CE7ACE2C2F37BF00B8AED3 /* Carnage.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +220,10 @@
 				Base,
 			);
 			mainGroup = 84CE7AC52C2F37BF00B8AED3;
+			packageReferences = (
+				84CE7AF42C2F4D5B00B8AED3 /* XCLocalSwiftPackageReference "../carnage-client/client" */,
+				84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */,
+			);
 			productRefGroup = 84CE7ACF2C2F37BF00B8AED3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,6 +240,7 @@
 			files = (
 				84CE7ADE2C2F37C100B8AED3 /* LaunchScreen.storyboard in Resources */,
 				84CE7ADB2C2F37C100B8AED3 /* Assets.xcassets in Resources */,
+				84CE7B132C30236D00B8AED3 /* GameScene.sks in Resources */,
 				84CE7AD92C2F37BF00B8AED3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,8 +252,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84CE7AD62C2F37BF00B8AED3 /* ViewController.swift in Sources */,
+				84CE7B042C2F62DF00B8AED3 /* GameViewController.swift in Sources */,
+				84CE7AE62C2F381900B8AED3 /* FirstScreenView.swift in Sources */,
+				84CE7B0B2C300D7C00B8AED3 /* SecondScreenViewModel.swift in Sources */,
+				84CE7B012C2F51BD00B8AED3 /* FirstScreenConfigurator.swift in Sources */,
+				84CE7AF02C2F469F00B8AED3 /* Client.swift in Sources */,
+				84CE7AFF2C2F51AF00B8AED3 /* FirstScreenModel.swift in Sources */,
+				84CE7B062C2F642F00B8AED3 /* GameScene.swift in Sources */,
+				84CE7B092C300D6800B8AED3 /* SecondScreenView.swift in Sources */,
+				84CE7AEA2C2F3BB300B8AED3 /* FirstScreenViewModel.swift in Sources */,
+				84CE7B112C300F6800B8AED3 /* SecondScreenConfigurator.swift in Sources */,
 				84CE7AD22C2F37BF00B8AED3 /* AppDelegate.swift in Sources */,
+				84CE7AED2C2F414E00B8AED3 /* EventCell.swift in Sources */,
+				84CE7B0F2C300E2F00B8AED3 /* NavigationManager.swift in Sources */,
 				84CE7AD42C2F37BF00B8AED3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +425,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,6 +454,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -363,6 +490,50 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		84CE7AF42C2F4D5B00B8AED3 /* XCLocalSwiftPackageReference "../carnage-client/client" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = "../carnage-client/client";
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Boilertalk/Web3.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.8.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		84CE7AF22C2F497300B8AED3 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		84CE7AF52C2F4D5B00B8AED3 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		84CE7AF82C2F501600B8AED3 /* Web3 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3;
+		};
+		84CE7AFA2C2F501600B8AED3 /* Web3ContractABI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3ContractABI;
+		};
+		84CE7AFC2C2F501600B8AED3 /* Web3PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */;
+			productName = Web3PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 84CE7AC62C2F37BF00B8AED3 /* Project object */;
 }
