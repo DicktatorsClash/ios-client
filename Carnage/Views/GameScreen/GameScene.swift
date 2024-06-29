@@ -1,4 +1,6 @@
 import SpriteKit
+import AVFoundation
+
 
 enum AttackType {
     case china
@@ -15,13 +17,18 @@ class GameScene: SKScene, GameSceneViewInteractable {
     var ukraine: SKSpriteNode!
     var chinaRussiaRocketGif: SKSpriteNode?
     var ukraineRussiaRocketGif: SKSpriteNode?
+    var backgroundMusic: SKAudioNode?
     
+    let gifFrameSpeed = 0.1
+
     private var contentNode = SKNode()
     private var previousTouchLocation: CGPoint?
     
     private lazy var initialScrollPosition = CGPoint(x: -size.width, y: -size.height + 50)
     private lazy var pointChinaRussiaBomb = CGPoint(x: self.size.width + 60, y: self.size.height - 70)
     private lazy var ponitUkraineRussiaBomb = CGPoint(x: self.size.width / 1.35 + 40, y: self.size.height / 1.4 + 12)
+    let boom = SKAction.playSoundFileNamed("boom", waitForCompletion: false)
+
     
     override func didMove(to view: SKView) {
         super.didMove(to: view)
@@ -60,6 +67,8 @@ class GameScene: SKScene, GameSceneViewInteractable {
     }
     
     func attack(_ type: AttackType) {
+        playSoundEffect()
+
         if case .china = type {
             addChinaRussiaBombGIFToScene(named: "rocket", at: pointChinaRussiaBomb, rotation: 0)
         }
@@ -117,10 +126,9 @@ class GameScene: SKScene, GameSceneViewInteractable {
         
         
         contentNode.addChild(ukraineRussiaRocketGif!)
-        let animateAction = SKAction.animate(with: frames, timePerFrame: 0.07)
-        ukraineRussiaRocketGif!.run(SKAction.repeat(animateAction, count: 3))
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        let animateAction = SKAction.animate(with: frames, timePerFrame: gifFrameSpeed)
+        ukraineRussiaRocketGif!.run(SKAction.repeat(animateAction, count: 1))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
             self.ukraineRussiaRocketGif?.removeFromParent()
         }
     }
@@ -153,11 +161,17 @@ class GameScene: SKScene, GameSceneViewInteractable {
         chinaRussiaRocketGif?.zRotation = rotation
         
         contentNode.addChild(chinaRussiaRocketGif!)
-        let animateAction = SKAction.animate(with: frames, timePerFrame: 0.07)
+        let animateAction = SKAction.animate(with: frames, timePerFrame: gifFrameSpeed)
         chinaRussiaRocketGif!.run(SKAction.repeat(animateAction, count: 1))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
             self.chinaRussiaRocketGif?.removeFromParent()
+        }
+    }
+    
+    func playSoundEffect() {
+        if let soundURL = Bundle.main.url(forResource: "bomb", withExtension: "mp3") {
+            run(SKAction.playSoundFileNamed(soundURL.lastPathComponent, waitForCompletion: false))
         }
     }
 }

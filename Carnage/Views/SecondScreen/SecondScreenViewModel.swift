@@ -23,9 +23,9 @@ class SecondScreenViewModel: ObservableObject {
         Task {
             while(true) {
                 await scene.attack(.china)
-                await scene.attack(.ukraine)
+//                await scene.attack(.ukraine)
                 
-                try await Task.sleep(nanoseconds: 2000000000)
+                try await Task.sleep(nanoseconds: 3000000000)
             }
         }
     }

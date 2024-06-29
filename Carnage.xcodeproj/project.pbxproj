@@ -10,6 +10,7 @@
 		843FB7642C305D3800C4C1BF /* rocket.gif in Resources */ = {isa = PBXBuildFile; fileRef = 843FB7632C305D3700C4C1BF /* rocket.gif */; };
 		843FB7672C30667F00C4C1BF /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 843FB7662C30667F00C4C1BF /* OpenAPIClient */; };
 		843FB76A2C3067CF00C4C1BF /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 843FB7692C3067CF00C4C1BF /* OpenAPIClient */; };
+		8473AEB02C30B3E50072E8EF /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8473AEAF2C30B3E50072E8EF /* bomb.mp3 */; };
 		84CE7AD22C2F37BF00B8AED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */; };
 		84CE7AD42C2F37BF00B8AED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */; };
 		84CE7AD92C2F37BF00B8AED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7AD72C2F37BF00B8AED3 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		843FB7632C305D3700C4C1BF /* rocket.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rocket.gif; sourceTree = "<group>"; };
+		8473AEAF2C30B3E50072E8EF /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
 		84CE7ACE2C2F37BF00B8AED3 /* Carnage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */,
 				84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */,
 				843FB7632C305D3700C4C1BF /* rocket.gif */,
+				8473AEAF2C30B3E50072E8EF /* bomb.mp3 */,
 				84CE7AD72C2F37BF00B8AED3 /* Main.storyboard */,
 				84CE7ADA2C2F37C100B8AED3 /* Assets.xcassets */,
 				84CE7ADC2C2F37C100B8AED3 /* LaunchScreen.storyboard */,
@@ -249,6 +252,7 @@
 			files = (
 				84CE7ADE2C2F37C100B8AED3 /* LaunchScreen.storyboard in Resources */,
 				843FB7642C305D3800C4C1BF /* rocket.gif in Resources */,
+				8473AEB02C30B3E50072E8EF /* bomb.mp3 in Resources */,
 				84CE7ADB2C2F37C100B8AED3 /* Assets.xcassets in Resources */,
 				84CE7B132C30236D00B8AED3 /* GameScene.sks in Resources */,
 				84CE7AD92C2F37BF00B8AED3 /* Main.storyboard in Resources */,
