@@ -1,17 +1,35 @@
 import SpriteKit
 
-class GameScene: SKScene {
+enum AttackType {
+    case china
+    case ukraine
+}
+
+protocol GameSceneViewInteractable {
+    func attack(_ type: AttackType)
+}
+
+class GameScene: SKScene, GameSceneViewInteractable {
     var russia: SKSpriteNode!
     var china: SKSpriteNode!
     var ukraine: SKSpriteNode!
-
+    var chinaRussiaRocketGif: SKSpriteNode?
+    var ukraineRussiaRocketGif: SKSpriteNode?
     
     private var contentNode = SKNode()
     private var previousTouchLocation: CGPoint?
     
+    private lazy var initialScrollPosition = CGPoint(x: -size.width, y: -size.height + 50)
+    private lazy var pointChinaRussiaBomb = CGPoint(x: self.size.width + 60, y: self.size.height - 70)
+    private lazy var ponitUkraineRussiaBomb = CGPoint(x: self.size.width / 1.35 + 40, y: self.size.height / 1.4 + 12)
+    
     override func didMove(to view: SKView) {
+        super.didMove(to: view)
+        
         backgroundColor = SKColor.gray
-        setupContent()        
+        setupContent()
+        
+        contentNode.position = initialScrollPosition
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -31,7 +49,6 @@ class GameScene: SKScene {
             
             self.previousTouchLocation = location
 
-            // Limit the scrolling to the bounds of the content
             let minX = min(0, self.size.width - contentNode.calculateAccumulatedFrame().width)
             let minY = min(0, self.size.height - contentNode.calculateAccumulatedFrame().height)
             let maxX: CGFloat = 0
@@ -42,14 +59,23 @@ class GameScene: SKScene {
         }
     }
     
-    func setupContent() {
+    func attack(_ type: AttackType) {
+        if case .china = type {
+            addChinaRussiaBombGIFToScene(named: "rocket", at: pointChinaRussiaBomb, rotation: 0)
+        }
+        
+        if case .ukraine = type {
+            addUkraineRussiaBombScene(named: "rocket", at: ponitUkraineRussiaBomb, rotation: -3.14 / 4)
+        }
+    }
+    
+    private func setupContent() {
         let contentSize = CGSize(width: self.size.width * 2, height: self.size.height * 2)
         contentNode = SKNode()
         addChild(contentNode)
         
-        // Add content to the contentNode (e.g., a large map or background)
         let background = SKSpriteNode(color: .gray, size: contentSize)
-        background.position = CGPoint(x: 0, y: 0)
+        background.position = CGPoint(x: contentSize.width / 2, y: contentSize.height / 2)
         contentNode.addChild(background)
         
         let russia = setupRussia()
@@ -60,10 +86,80 @@ class GameScene: SKScene {
         
         let ukraine = setupUkraine()
         contentNode.addChild(ukraine)
-        
-        contentNode.position = CGPoint(x: self.size.width /  2, y: self.size.height / 2)
     }
     
+    private func addUkraineRussiaBombScene(named gifName: String, at position: CGPoint, rotation: CGFloat) {
+        guard let gifURL = Bundle.main.url(forResource: gifName, withExtension: "gif"),
+              let imageData = try? Data(contentsOf: gifURL),
+              let source = CGImageSourceCreateWithData(imageData as CFData, nil) else {
+            print("Failed to load gif file.")
+            return
+        }
+        
+        var frames = [SKTexture]()
+        let count = CGImageSourceGetCount(source)
+        for i in 0..<count {
+            if let cgImage = CGImageSourceCreateImageAtIndex(source, i, nil) {
+                let texture = SKTexture(cgImage: cgImage)
+                frames.append(texture)
+            }
+        }
+        
+        guard !frames.isEmpty else {
+            print("Failed to load frames from GIF.")
+            return
+        }
+        
+        ukraineRussiaRocketGif = SKSpriteNode(texture: frames[0])
+        ukraineRussiaRocketGif?.position = position
+        ukraineRussiaRocketGif?.setScale(0.15)
+        ukraineRussiaRocketGif?.zRotation = rotation
+        
+        
+        contentNode.addChild(ukraineRussiaRocketGif!)
+        let animateAction = SKAction.animate(with: frames, timePerFrame: 0.07)
+        ukraineRussiaRocketGif!.run(SKAction.repeat(animateAction, count: 3))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.ukraineRussiaRocketGif?.removeFromParent()
+        }
+    }
+    
+    private func addChinaRussiaBombGIFToScene(named gifName: String, at position: CGPoint, rotation: CGFloat) {
+        guard let gifURL = Bundle.main.url(forResource: gifName, withExtension: "gif"),
+              let imageData = try? Data(contentsOf: gifURL),
+              let source = CGImageSourceCreateWithData(imageData as CFData, nil) else {
+            print("Failed to load gif file.")
+            return
+        }
+        
+        var frames = [SKTexture]()
+        let count = CGImageSourceGetCount(source)
+        for i in 0..<count {
+            if let cgImage = CGImageSourceCreateImageAtIndex(source, i, nil) {
+                let texture = SKTexture(cgImage: cgImage)
+                frames.append(texture)
+            }
+        }
+        
+        guard !frames.isEmpty else {
+            print("Failed to load frames from GIF.")
+            return
+        }
+        
+        chinaRussiaRocketGif = SKSpriteNode(texture: frames[0])
+        chinaRussiaRocketGif?.position = position
+        chinaRussiaRocketGif?.setScale(0.3)
+        chinaRussiaRocketGif?.zRotation = rotation
+        
+        contentNode.addChild(chinaRussiaRocketGif!)
+        let animateAction = SKAction.animate(with: frames, timePerFrame: 0.07)
+        chinaRussiaRocketGif!.run(SKAction.repeat(animateAction, count: 1))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.chinaRussiaRocketGif?.removeFromParent()
+        }
+    }
 }
 
 extension GameScene {
@@ -87,7 +183,7 @@ extension GameScene {
         let texture = SKTexture(imageNamed: "ukraine")
         ukraine = SKSpriteNode(texture: texture)
         ukraine.size = texture.size()
-        ukraine.position = CGPoint(x: self.size.width / 1.35 + 10 , y: self.size.height / 1.4 - 6)
+        ukraine.position = CGPoint(x: self.size.width / 1.35 + 14 , y: self.size.height / 1.4 - 7)
         return ukraine
     }
 }

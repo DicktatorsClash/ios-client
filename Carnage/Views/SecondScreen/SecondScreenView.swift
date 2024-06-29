@@ -11,17 +11,14 @@ import SpriteKit
 struct SecondScreenView: View {
     @StateObject var viewModel: SecondScreenViewModel
 
-    var scene: SKScene {
-        let scene = GameScene(fileNamed: "GameScene")!
-        scene.scaleMode = .aspectFill
-        return scene
-    }
-    
     var body: some View {
         VStack {
             HStack {
-                Text("Hello, World!")
-                SpriteView(scene: scene)
+                VStack {
+                    Text("Hello, World!")
+                }
+                SpriteView(scene: viewModel.scene)
+                    .ignoresSafeArea()
                     .scaledToFill()
             }
         }

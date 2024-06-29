@@ -36,7 +36,7 @@ struct FirstScreen: View {
             }
             
             Button {
-                viewModel.sendToken(amount: "1", contract: "1", destinationAddress: "1")
+                viewModel.sendToken(amount: "1", sender: "1", contract: "1", destinationAddress: "1")
             } label: {
                 Text("Send token")
             }

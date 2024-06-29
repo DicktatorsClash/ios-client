@@ -81,10 +81,11 @@ class FirstScreenViewModel: ObservableObject {
         }
     }
     
-    func sendToken(amount: String, contract: String, destinationAddress: String) {
+    func sendToken(amount: String, sender: String, contract: String, destinationAddress: String) {
         Task {
             let response = try await client.sendToken(
                 amount: amount,
+                sender: sender,
                 contract: contract,
                 destinationAddress: destinationAddress
             )
@@ -93,8 +94,8 @@ class FirstScreenViewModel: ObservableObject {
     }
     
     func onGameScreen() {
-        AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeRight
-        UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+        AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeLeft
+        UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")
         UINavigationController.attemptRotationToDeviceOrientation()
         NavigationManager.shared.pushView(SecondScreenConfigurator.configure())
     }

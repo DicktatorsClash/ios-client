@@ -42,7 +42,7 @@ enum ClientErrors: Error {
 
 protocol ClientProtocol {
     func createAccount(privateKey: String) async throws -> CreateUser200Response
-    func sendToken(amount: String, contract: String, destinationAddress: String) async throws -> SendToken200Response
+    func sendToken(amount: String, sender: String, contract: String, destinationAddress: String) async throws -> SendToken200Response
 }
 
 class Client: ClientProtocol {
@@ -63,8 +63,24 @@ class Client: ClientProtocol {
         }
     }
     
-    func sendToken(amount: String, contract: String, destinationAddress: String) async throws -> SendToken200Response {
-        let data = SendTokenRequestData(amount: amount, contract: contract, destinationAddress: destinationAddress)
+    func attackCountry(sender: String) async throws -> AttackCountry200Response {
+        let data = AttackCountryRequestData(sender: sender)
+        let request = AttackCountryRequest(data: data)
+        return try await withUnsafeThrowingContinuation { continuation in
+            CombatAPI.attackCountry(attackCountryRequest: request) { data, error in
+                if let data = data {
+                    continuation.resume(returning: data)
+                }
+                
+                if let error = error {
+                    self.handleClientError(error: error, continuation: continuation)
+                }
+            }
+        }
+    }
+    
+    func sendToken(amount: String, sender: String, contract: String, destinationAddress: String) async throws -> SendToken200Response {
+        let data = SendTokenRequestData(amount: amount, sender: sender, contract: contract, destinationAddress: destinationAddress)
         let request = SendTokenRequest(data: data)
         
         return try await withUnsafeThrowingContinuation { continuation in
