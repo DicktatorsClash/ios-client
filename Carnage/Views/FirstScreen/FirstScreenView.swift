@@ -29,23 +29,23 @@ struct FirstScreen: View {
                 Text("Finish voice recording")
             }
             
-            Button {
-                viewModel.createAccount()
-            } label: {
-                Text("Create accounnt request")
-            }
-            
-            Button {
-                viewModel.sendToken(amount: "1", sender: "1", contract: "1", destinationAddress: "1")
-            } label: {
-                Text("Send token")
-            }
-            
-            Button {
-                viewModel.onGameScreen()
-            } label: {
-                Text("Start game")
-            }            
+//            Button {
+//                viewModel.createAccount()
+//            } label: {
+//                Text("Create accounnt request")
+//            }
+//
+//            Button {
+//                viewModel.sendToken(amount: "1", sender: "1", contract: "1", destinationAddress: "1")
+//            } label: {
+//                Text("Send token")
+//            }
+//            
+//            Button {
+//                viewModel.onGameScreen()
+//            } label: {
+//                Text("Start game")
+//            }            
         }
     }
 }

@@ -14,8 +14,31 @@ struct SecondScreenView: View {
     var body: some View {
         VStack {
             HStack {
-                VStack {
-                    Text("Hello, World!")
+                VStack(alignment: .leading) {
+                    Text(viewModel.recognizedText)
+                        .lineLimit(1)
+                    
+                    Button {
+                        viewModel.startVoiceRecognize()
+                    } label: {
+                        Image(systemName: "mic.fill")
+                        Text("Start voice recording")
+                    }
+                    
+                    Button {
+                        viewModel.stopRecognition()
+                    } label: {
+                        Text("Finish voice recording")
+                    }
+                    
+                    ScrollView {
+                        VStack(alignment: .leading) {
+                            ForEach(viewModel.gameEvents) { event in
+                                GameEventCell(attackResult: event.attackResult, resultToken: event.resultToken)
+                            }
+                        }
+                        .frame(width: 150)
+                    }
                 }
                 SpriteView(scene: viewModel.scene)
                     .ignoresSafeArea()
@@ -31,5 +54,5 @@ struct SecondScreenView: View {
 }
 
 #Preview {
-    SecondScreenView(viewModel: SecondScreenViewModel())
+    SecondScreenView(viewModel: SecondScreenViewModel(client: Client()))
 }

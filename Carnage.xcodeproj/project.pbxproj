@@ -7,10 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8419C9AD2C315AF20088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9AC2C315AF20088D055 /* OpenAPIClient */; };
+		8419C9B22C316E620088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9B12C316E620088D055 /* OpenAPIClient */; };
+		8419C9B52C316EE40088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9B42C316EE40088D055 /* OpenAPIClient */; };
+		8419C9B72C3170760088D055 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419C9B62C3170760088D055 /* AccountManager.swift */; };
+		8419C9BA2C3178C20088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9B92C3178C20088D055 /* OpenAPIClient */; };
+		8419C9BD2C317DEA0088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9BC2C317DEA0088D055 /* OpenAPIClient */; };
+		8419C9C22C3185740088D055 /* GameEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419C9C12C3185740088D055 /* GameEventCell.swift */; };
+		8419C9C52C318AB30088D055 /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 8419C9C42C318AB30088D055 /* OpenAPIClient */; };
 		843FB7642C305D3800C4C1BF /* rocket.gif in Resources */ = {isa = PBXBuildFile; fileRef = 843FB7632C305D3700C4C1BF /* rocket.gif */; };
 		843FB7672C30667F00C4C1BF /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 843FB7662C30667F00C4C1BF /* OpenAPIClient */; };
 		843FB76A2C3067CF00C4C1BF /* OpenAPIClient in Frameworks */ = {isa = PBXBuildFile; productRef = 843FB7692C3067CF00C4C1BF /* OpenAPIClient */; };
 		8473AEB02C30B3E50072E8EF /* bomb.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8473AEAF2C30B3E50072E8EF /* bomb.mp3 */; };
+		8473AEB32C30BEE20072E8EF /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473AEB22C30BEE20072E8EF /* Event.swift */; };
 		84CE7AD22C2F37BF00B8AED3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */; };
 		84CE7AD42C2F37BF00B8AED3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */; };
 		84CE7AD92C2F37BF00B8AED3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84CE7AD72C2F37BF00B8AED3 /* Main.storyboard */; };
@@ -37,8 +46,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8419C9B62C3170760088D055 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
+		8419C9C12C3185740088D055 /* GameEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameEventCell.swift; sourceTree = "<group>"; };
 		843FB7632C305D3700C4C1BF /* rocket.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = rocket.gif; sourceTree = "<group>"; };
 		8473AEAF2C30B3E50072E8EF /* bomb.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bomb.mp3; sourceTree = "<group>"; };
+		8473AEB22C30BEE20072E8EF /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		84CE7ACE2C2F37BF00B8AED3 /* Carnage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carnage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84CE7AD12C2F37BF00B8AED3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84CE7AD32C2F37BF00B8AED3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,11 +78,17 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8419C9BD2C317DEA0088D055 /* OpenAPIClient in Frameworks */,
+				8419C9AD2C315AF20088D055 /* OpenAPIClient in Frameworks */,
 				843FB7672C30667F00C4C1BF /* OpenAPIClient in Frameworks */,
+				8419C9B52C316EE40088D055 /* OpenAPIClient in Frameworks */,
 				84CE7AF92C2F501600B8AED3 /* Web3 in Frameworks */,
+				8419C9B22C316E620088D055 /* OpenAPIClient in Frameworks */,
+				8419C9BA2C3178C20088D055 /* OpenAPIClient in Frameworks */,
 				843FB76A2C3067CF00C4C1BF /* OpenAPIClient in Frameworks */,
 				84CE7AF62C2F4D5B00B8AED3 /* OpenAPIClient in Frameworks */,
 				84CE7AFB2C2F501600B8AED3 /* Web3ContractABI in Frameworks */,
+				8419C9C52C318AB30088D055 /* OpenAPIClient in Frameworks */,
 				84CE7AFD2C2F501600B8AED3 /* Web3PromiseKit in Frameworks */,
 				84CE7AF32C2F497300B8AED3 /* OpenAPIClient in Frameworks */,
 			);
@@ -79,6 +97,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8419C9C02C3185640088D055 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				8419C9C12C3185740088D055 /* GameEventCell.swift */,
+			);
+			path = Subview;
+			sourceTree = "<group>";
+		};
+		8473AEB12C30BEB60072E8EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8473AEB22C30BEE20072E8EF /* Event.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		84CE7AC52C2F37BF00B8AED3 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +132,7 @@
 		84CE7AD02C2F37BF00B8AED3 /* Carnage */ = {
 			isa = PBXGroup;
 			children = (
+				8473AEB12C30BEB60072E8EF /* Models */,
 				84CE7B0D2C300E1D00B8AED3 /* Managers */,
 				84CE7AEE2C2F469000B8AED3 /* Client */,
 				84CE7AE72C2F397700B8AED3 /* Views */,
@@ -164,6 +199,7 @@
 		84CE7B072C300D1500B8AED3 /* SecondScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8419C9C02C3185640088D055 /* Subview */,
 				84CE7B102C300F6800B8AED3 /* SecondScreenConfigurator.swift */,
 				84CE7B0A2C300D7C00B8AED3 /* SecondScreenViewModel.swift */,
 				84CE7B082C300D6800B8AED3 /* SecondScreenView.swift */,
@@ -175,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				84CE7B0E2C300E2F00B8AED3 /* NavigationManager.swift */,
+				8419C9B62C3170760088D055 /* AccountManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -203,6 +240,12 @@
 				84CE7AFC2C2F501600B8AED3 /* Web3PromiseKit */,
 				843FB7662C30667F00C4C1BF /* OpenAPIClient */,
 				843FB7692C3067CF00C4C1BF /* OpenAPIClient */,
+				8419C9AC2C315AF20088D055 /* OpenAPIClient */,
+				8419C9B12C316E620088D055 /* OpenAPIClient */,
+				8419C9B42C316EE40088D055 /* OpenAPIClient */,
+				8419C9B92C3178C20088D055 /* OpenAPIClient */,
+				8419C9BC2C317DEA0088D055 /* OpenAPIClient */,
+				8419C9C42C318AB30088D055 /* OpenAPIClient */,
 			);
 			productName = Carnage;
 			productReference = 84CE7ACE2C2F37BF00B8AED3 /* Carnage.app */;
@@ -234,7 +277,7 @@
 			mainGroup = 84CE7AC52C2F37BF00B8AED3;
 			packageReferences = (
 				84CE7AF72C2F501600B8AED3 /* XCRemoteSwiftPackageReference "Web3.swift" */,
-				843FB7682C3067CF00C4C1BF /* XCLocalSwiftPackageReference "../carnage-client/client" */,
+				8419C9C32C318AB30088D055 /* XCLocalSwiftPackageReference "../carnage-client/client" */,
 			);
 			productRefGroup = 84CE7ACF2C2F37BF00B8AED3 /* Products */;
 			projectDirPath = "";
@@ -269,9 +312,12 @@
 				84CE7B042C2F62DF00B8AED3 /* GameViewController.swift in Sources */,
 				84CE7AE62C2F381900B8AED3 /* FirstScreenView.swift in Sources */,
 				84CE7B0B2C300D7C00B8AED3 /* SecondScreenViewModel.swift in Sources */,
+				8473AEB32C30BEE20072E8EF /* Event.swift in Sources */,
 				84CE7B012C2F51BD00B8AED3 /* FirstScreenConfigurator.swift in Sources */,
+				8419C9C22C3185740088D055 /* GameEventCell.swift in Sources */,
 				84CE7AF02C2F469F00B8AED3 /* Client.swift in Sources */,
 				84CE7AFF2C2F51AF00B8AED3 /* FirstScreenModel.swift in Sources */,
+				8419C9B72C3170760088D055 /* AccountManager.swift in Sources */,
 				84CE7B062C2F642F00B8AED3 /* GameScene.swift in Sources */,
 				84CE7B092C300D6800B8AED3 /* SecondScreenView.swift in Sources */,
 				84CE7AEA2C2F3BB300B8AED3 /* FirstScreenViewModel.swift in Sources */,
@@ -506,7 +552,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		843FB7682C3067CF00C4C1BF /* XCLocalSwiftPackageReference "../carnage-client/client" */ = {
+		8419C9C32C318AB30088D055 /* XCLocalSwiftPackageReference "../carnage-client/client" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = "../carnage-client/client";
 		};
@@ -524,6 +570,30 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8419C9AC2C315AF20088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		8419C9B12C316E620088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		8419C9B42C316EE40088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		8419C9B92C3178C20088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		8419C9BC2C317DEA0088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
+		8419C9C42C318AB30088D055 /* OpenAPIClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OpenAPIClient;
+		};
 		843FB7662C30667F00C4C1BF /* OpenAPIClient */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OpenAPIClient;

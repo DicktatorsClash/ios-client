@@ -30,7 +30,7 @@ class FirstScreenViewModel: ObservableObject {
             self.startRecognition()
         }
     }
-       
+    
     func startRecognition() {
         do {
             recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
@@ -56,8 +56,6 @@ class FirstScreenViewModel: ObservableObject {
     }
     
     func stopRecognition() {
-        recognizedText = "Stopped"
-
         audioEngine.stop()
         audioEngine.inputNode.removeTap(onBus: 0)
         
@@ -66,33 +64,89 @@ class FirstScreenViewModel: ObservableObject {
         
         recognitionTask?.cancel()
         recognitionTask = nil
-    }
-    
-    func createAccount() {
-        do {
-            let privateKey = try EthereumPrivateKey()
-            print(privateKey.hex())
-            Task {
-                let response = try await client.createAccount(privateKey: privateKey.hex())
-                print(response)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func sendToken(amount: String, sender: String, contract: String, destinationAddress: String) {
+        
         Task {
-            let response = try await client.sendToken(
-                amount: amount,
-                sender: sender,
-                contract: contract,
-                destinationAddress: destinationAddress
-            )
-            print(response)
+            try await sendTextToAi(text: recognizedText)
         }
+        
+        recognizedText = "Stopped"
     }
     
+    func sendTextToAi(text: String) async throws {
+        let response = try await client.sendText(text: text)
+        guard let result = response.data?.attributes.result else {
+            print("not found data")
+            return
+        }
+        
+        switch result {
+        case "0":
+            break
+        case "1":
+            print("create acc")
+            let response = try await client.createAccount(privateKey: "")
+            guard let address = response.data?.attributes.address, let txhashes = response.data?.attributes.txHashes else {
+                print("failed to create acc")
+                return
+            }
+            
+            while(true) {
+                let resp1 = try? await client.listenTx(txHash: txhashes[0], txType: "1")
+                let resp2 = try? await client.listenTx(txHash: txhashes[1], txType: "1")
+                
+                guard let isSuccess1 = resp1?.data?.attributes.isSuccess, let isSuccess2 = resp2?.data?.attributes.isSuccess else {
+                    print("create acc: not found tx, trying again...")
+                    continue
+                }
+                
+                if isSuccess1 && isSuccess2 {
+                    AccountManager.shared.setAccount(address: address)
+                    DispatchQueue.main.async { self.onGameScreen() }
+                    print("success account created")
+                    break
+                }
+                
+                try await Task.sleep(nanoseconds: 3000000000)
+            }
+            
+//        case "2":
+//            print("send token")
+//            _ = try await client.sendToken(amount: "0.0001", sender: AccountManager.shared.getAccount(), contract: "", destinationAddress: "")
+//        case "3":
+//            print("attack country")
+//             = try await client.attackCountry(sender: AccountManager.shared.getAccount())
+        default:
+            print("not found")
+            return
+        }
+        
+    }
+    
+//    func createAccount() {
+//        do {
+//            let privateKey = try EthereumPrivateKey()
+//            print(privateKey.hex())
+//            Task {
+//                let response = try await client.createAccount(privateKey: "")
+//                
+//            }
+//        } catch {
+//            print(error)
+//        }
+//    }
+    
+//    func sendToken(amount: String, sender: String, contract: String, destinationAddress: String) {
+//        Task {
+//            let response = try await client.sendToken(
+//                amount: amount,
+//                sender: sender,
+//                contract: contract,
+//                destinationAddress: destinationAddress
+//            )
+//            print(response)
+//        }
+//    }
+//    
     func onGameScreen() {
         AppDelegate.orientationLock = UIInterfaceOrientationMask.landscapeLeft
         UIDevice.current.setValue(UIInterfaceOrientation.landscapeLeft.rawValue, forKey: "orientation")

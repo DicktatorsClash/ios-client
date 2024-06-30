@@ -10,7 +10,7 @@ import SwiftUI
 
 class SecondScreenConfigurator {
     static func configure() -> some View {
-        let viewModel = SecondScreenViewModel()
+        let viewModel = SecondScreenViewModel(client: Client())
         return SecondScreenView(viewModel: viewModel)
     }
 }

@@ -24,7 +24,7 @@ class GameScene: SKScene, GameSceneViewInteractable {
     private var contentNode = SKNode()
     private var previousTouchLocation: CGPoint?
     
-    private lazy var initialScrollPosition = CGPoint(x: -size.width, y: -size.height + 50)
+    private lazy var initialScrollPosition = CGPoint(x: -size.width + 50, y: -size.height + 50)
     private lazy var pointChinaRussiaBomb = CGPoint(x: self.size.width + 60, y: self.size.height - 70)
     private lazy var ponitUkraineRussiaBomb = CGPoint(x: self.size.width / 1.35 + 40, y: self.size.height / 1.4 + 12)
     let boom = SKAction.playSoundFileNamed("boom", waitForCompletion: false)
@@ -33,7 +33,7 @@ class GameScene: SKScene, GameSceneViewInteractable {
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         
-        backgroundColor = SKColor.gray
+        backgroundColor = SKColor.white
         setupContent()
         
         contentNode.position = initialScrollPosition
@@ -83,7 +83,7 @@ class GameScene: SKScene, GameSceneViewInteractable {
         contentNode = SKNode()
         addChild(contentNode)
         
-        let background = SKSpriteNode(color: .gray, size: contentSize)
+        let background = SKSpriteNode(color: .white, size: contentSize)
         background.position = CGPoint(x: contentSize.width / 2, y: contentSize.height / 2)
         contentNode.addChild(background)
         
